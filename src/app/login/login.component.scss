@@ -1,0 +1,181 @@
+.signin-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.signin-form {
+    width: 550px;
+    height: 775px;
+    background: rgba(44, 19, 87, 0.4);
+    backdrop-filter: blur(30px);
+    border-radius: 8px;
+    padding: 60px 120px;
+}
+
+.sphere {
+    position: absolute;
+}
+
+.sphere.s1 {
+    top: 358px;
+    left: 248px;
+    width: 167px;
+    height: 167px;
+}
+
+.sphere.s2 {
+    top: 90px;
+    right: 389px;
+}
+
+.signin-title {
+    font-weight: 600;
+    font-size: 30px;
+    color: #FFFFFF;
+
+    margin-top: 35px;
+}
+
+.signin-app {
+    margin-top: 13px;
+    font-weight: 600;
+    font-size: 15px;
+
+    color: #663EA8;
+}
+
+.signin-form__google {
+    margin-top: 35px;
+}
+
+.signin-form__google button {
+    background: none;
+    border: none;
+    outline: none;
+    border: 1px solid #5C33A0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google-title {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 15px;
+
+    color: #7644C9;
+}
+
+.signin-form button,
+.signin-form input[type="email"],
+.signin-form input[type="password"] {
+    width: 100%;
+    height: 44px;
+    border-radius: 8px;
+}
+
+.signin__or-email {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.signin__or-email .title {
+    font-weight: 600;
+    font-size: 12px;
+
+    color: #663EA8;
+}
+
+.signin__or-email .line {
+    width: 23%;
+    height: 2px;
+    background: #5C33A0;
+    border-radius: 3px;
+}
+
+.signin-form__email label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    
+    color: #FFFFFF;
+}
+
+.signin-form__email input[type="email"],
+.signin-form__email input[type="password"] {
+    border: none;
+    outline: none;
+    background: #5C33A0;
+    border-radius: 8px;
+    padding: 0 22px;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.signin-form__email input[type="email"]::placeholder,
+.signin-form__email input[type="password"]::placeholder {
+    font-weight: 600;
+    font-size: 15px;
+    
+    color: #7644C9;
+}
+
+.signin-addictional {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.signin-addictional .remember-me {
+    display: flex;
+}
+
+.signin-addictional label {
+    margin: 0;
+    margin-left: 10px;
+    font-size: 12px;
+
+    color: #FFFFFF;
+}
+
+.forgot-password {
+    font-weight: bold;
+    font-size: 12px;
+
+    color: #7F41FF;
+}
+
+.signin-footer {
+    margin-top: 55px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #7644C9;
+}
+
+.enter-btn {
+    margin-top: 41px;
+    border: none;
+    outline: none;
+    background-color: #7F41FF;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 12px;
+
+    color: #FFFFFF;
+    transition: .25s;
+}
+
+.enter-btn:hover {
+    background-color: #9966ff;
+    cursor: pointer;
+}
