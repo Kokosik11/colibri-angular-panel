@@ -1,0 +1,28 @@
+body {
+  background-color: #3E2568;
+}
+
+.signin-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sphere {
+  position: absolute;
+}
+
+.sphere.s1 {
+  top: 358px;
+  left: 248px;
+  width: 167px;
+  height: 167px;
+}
+
+.sphere.s2 {
+  top: 90px;
+  right: 389px;
+}

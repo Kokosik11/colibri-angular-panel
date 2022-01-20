@@ -1,35 +1,11 @@
-.signin-wrapper {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
 .signin-form {
     width: 550px;
     height: 775px;
-    background: rgba(44, 19, 87, 0.4);
+    background-color: rgba(44, 19, 87, 0.4);
     backdrop-filter: blur(30px);
     border-radius: 8px;
     padding: 60px 120px;
-}
-
-.sphere {
-    position: absolute;
-}
-
-.sphere.s1 {
-    top: 358px;
-    left: 248px;
-    width: 167px;
-    height: 167px;
-}
-
-.sphere.s2 {
-    top: 90px;
-    right: 389px;
+    transition: .5s;
 }
 
 .signin-title {
@@ -60,6 +36,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #7644C9;
+    transition: 0.25s;
+}
+
+.signin-form__google button:hover,
+.signin-form__google button:focus {
+    color: #8959d6;
+    border-color: #8959d6;
+    cursor: pointer;
 }
 
 .google-title {
@@ -67,7 +52,6 @@
     font-weight: bold;
     font-size: 15px;
 
-    color: #7644C9;
 }
 
 .signin-form button,
@@ -95,7 +79,7 @@
 .signin__or-email .line {
     width: 23%;
     height: 2px;
-    background: #5C33A0;
+    background-color: #5C33A0;
     border-radius: 3px;
 }
 
@@ -105,7 +89,7 @@
     margin-bottom: 10px;
     font-weight: 600;
     font-size: 15px;
-    
+
     color: #FFFFFF;
 }
 
@@ -113,18 +97,26 @@
 .signin-form__email input[type="password"] {
     border: none;
     outline: none;
-    background: #5C33A0;
+    background-color: #5C33A0;
     border-radius: 8px;
     padding: 0 22px;
     color: #FFFFFF;
     font-weight: 600;
+    transition: .25s;
+}
+
+.signin-form__email input[type="email"]:hover,
+.signin-form__email input[type="password"]:hover,
+.signin-form__email input[type="email"]:focus,
+.signin-form__email input[type="password"]:focus {
+    background-color: #4d278a;
 }
 
 .signin-form__email input[type="email"]::placeholder,
 .signin-form__email input[type="password"]::placeholder {
     font-weight: 600;
     font-size: 15px;
-    
+
     color: #7644C9;
 }
 
@@ -175,7 +167,27 @@
     transition: .25s;
 }
 
-.enter-btn:hover {
+.enter-btn:hover,
+.enter-btn:focus {
     background-color: #9966ff;
     cursor: pointer;
+}
+
+.enter-btn[disabled] {
+    background-color: #7051a8;
+    color: #afafaf;
+    cursor: default;
+}
+
+.error {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.red {
+    color: rgb(255, 0, 106);
+}
+
+.m15 {
+  margin-top: 15px;
 }

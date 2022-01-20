@@ -1,0 +1,25 @@
+<div class="main">
+  <img class="bg-elem" src="../../../../assets/imgs/bg-img.svg" alt="background image">
+
+  <div class="main-menu">
+    <div class="menu-logo">
+      <div class="left">
+        <img src="../../../../assets/imgs/logo.svg" alt="Colibri logo">
+        <h3>Colibri Development Company</h3>
+      </div>
+
+      <div class="right">
+        <img src="../../../../assets/imgs/burger-icon.svg" alt="Burger icon svg">
+      </div>
+    </div>
+
+    <div class="links">
+      <a class="link" routerLink="/" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active">Главная</a>
+      <a class="link" routerLink="/content" routerLinkActive="active">Content managment</a>
+    </div>
+
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
+

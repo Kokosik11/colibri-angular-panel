@@ -1,48 +1,60 @@
-<div class="signin-wrapper">
-    <img class="sphere s1" src="../../assets/imgs/Sphere_a1.svg" alt="Sphere img 1">
-    <img class="sphere s2" src="../../assets/imgs/Sphere_a1.svg" alt="Sphere img 2">
+<div class="signin-form" [@fadeInOut] *ngIf="showForm">
+  <img src="../../assets/imgs/logo.svg" alt="Colibri logo">
 
-    <div class="signin-form">
-        <img src="../../assets/imgs/logo.svg" alt="Colibri logo">
+  <h1 class="signin-title">Авторизация</h1>
+  <span class="signin-app">Colibri CRM machine</span>
 
-        <h1 class="signin-title">Авторизация</h1>
-        <span class="signin-app">Colibri CRM machine</span>
+  <form [formGroup]="googleAuth" class="signin-form__google" (ngSubmit)="onGoogleSubmit()">
+    <button type="submit" class="signin-button__google">
+      <img src="../../assets/imgs/google.svg" alt="Google icon"/>
+      <span class="google-title">Войсти с Google</span>
+    </button>
+  </form>
 
-        <form class="signin-form__google" method="post" action="/api/signin/google" >
-            <button type="submit" class="signin-button__google">
-                <img src="../../assets/imgs/google.svg" alt="Google icon" />
-                <span class="google-title">Войсти с Google</span>
-            </button>
-        </form>
+  <div class="signin__or-email">
+    <div class="line"></div>
+    <div class="title">или войдите через Email</div>
+    <div class="line"></div>
+  </div>
 
-        <div class="signin__or-email">
-            <div class="line"></div>
-            <div class="title">или войдите через Email</div>
-            <div class="line"></div>
-        </div>
-
-        <form class="signin-form__email" method="post" action="/api/signin/standart">
-            <label for="email">Email*</label>
-            <input type="email" name="email" id="email" placeholder="example@gmail.com" />
-
-            <label for="password">Пароль*</label>
-            <input type="password" name="password" id="password" placeholder="От 8 символов" />
-
-            <div class="signin-addictional">
-                <div class="remember-me">
-                    <input type="checkbox" name="remember" id="remember" />
-                    <label for="remember">Запомнить меня</label>
-                </div>
-
-                <span class="forgot-password">Забыли пароль?</span>
-            </div>
-
-            <button type="submit" class="enter-btn">Войти</button>
-        </form>
-
-        <div class="signin-footer">
-            ©2020 Colibri Decelopment Company.
-        </div>
+  <form [formGroup]="emailAuth" class="signin-form__email" (ngSubmit)="onEmailSubmit()">
+    <div *ngIf="errorMsg" class="error red m15">
+      {{ errorMsg }}
     </div>
-    
+    <label for="email">Email*</label>
+
+    <!-- Errors -->
+    <div *ngIf="emailForm['email'].invalid && emailForm['email'].touched" class="error red">
+      <span *ngIf="emailForm['email'].errors && emailForm['email'].errors['required']">Обязательное поле!</span>
+      <span *ngIf="emailForm['email'].errors && emailForm['email'].errors['email']">Некорректный email адрес!</span>
+    </div>
+
+    <input (input)="handleInput()" type="email" formControlName="email" name="email" id="email"
+           placeholder="example@gmail.com"/>
+
+    <label for="password">Пароль*</label>
+
+    <!-- Errors -->
+    <div *ngIf="emailForm['password'].invalid && emailForm['password'].touched" class="error red">
+      <span *ngIf="emailForm['password'].errors && emailForm['password'].errors['required']">Обязательное поле!</span>
+      <span *ngIf="emailForm['password'].errors && emailForm['password'].errors['minlength']">Допустимая длина от 8 символов!</span>
+    </div>
+
+    <input type="password" formControlName="password" name="password" id="password" placeholder="От 8 символов"/>
+
+    <div class="signin-addictional">
+      <div class="remember-me">
+        <input type="checkbox" name="remember" id="remember"/>
+        <label for="remember">Запомнить меня</label>
+      </div>
+
+      <span class="forgot-password">Забыли пароль?</span>
+    </div>
+
+    <button [disabled]="emailAuth.invalid || emailAuth.disabled " type="submit" class="enter-btn">Войти</button>
+  </form>
+
+  <div class="signin-footer">
+    ©2020 Colibri Decelopment Company.
+  </div>
 </div>
