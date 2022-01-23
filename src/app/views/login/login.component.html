@@ -1,12 +1,12 @@
 <div class="signin-form" [@fadeInOut] *ngIf="showForm">
-  <img src="../../assets/imgs/logo.svg" alt="Colibri logo">
+  <img src="../../../assets/imgs/logo.svg" alt="Colibri logo">
 
   <h1 class="signin-title">Авторизация</h1>
   <span class="signin-app">Colibri CRM machine</span>
 
   <form [formGroup]="googleAuth" class="signin-form__google" (ngSubmit)="onGoogleSubmit()">
     <button type="submit" class="signin-button__google">
-      <img src="../../assets/imgs/google.svg" alt="Google icon"/>
+      <img src="../../../assets/imgs/google.svg" alt="Google icon"/>
       <span class="google-title">Войсти с Google</span>
     </button>
   </form>

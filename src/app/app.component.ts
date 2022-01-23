@@ -20,7 +20,11 @@ export class AppComponent implements OnInit {
       this.auth.setToken(potentialToken);
       this.auth.verifyToken().subscribe(
         null,
-        () => { this.router.navigate(['auth', 'signin'] )}
+        () => { this.router.navigate(['', 'auth', 'signin'], {
+          queryParams: {
+            accessDenied: true,
+          }
+        } )}
       )
 
     }

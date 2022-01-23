@@ -1,0 +1,31 @@
+.content {
+  margin-left: 100px;
+  padding-top: 68px;
+}
+
+.content-navigation {
+  max-width: 423px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-navigation a {
+  text-decoration: none;
+  color: #594581;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 0 18px 11px;
+  border-radius: 3px;
+  transition: 0.25s;
+}
+
+.content-navigation a.active {
+  color: #ffffff;
+  border-bottom: 3px solid white;
+}
+
+.content-container {
+  margin-top: 68px;
+}

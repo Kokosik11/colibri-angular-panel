@@ -1,17 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './views/login/login.component';
 import {AuthLayoutComponent} from './shared/layouts/auth-layout/auth-layout.component';
-import {AuthGuard} from "./shared/classes/auth.guard";
 import {MainLayoutComponent} from "./shared/layouts/main-layout/main-layout.component";
-import {MainComponent} from "./main/main.component";
-import {ContentComponent} from "./content/content.component";
+import {MainComponent} from "./views/main/main.component";
+import {ContentComponent} from "./views/content/content.component";
+
+import {AuthGuard} from "./shared/classes/auth.guard";
+import {ProjectsComponent} from "./views/projects/projects.component";
+import {FaqComponent} from "./views/faq/faq.component";
+import {ServicesComponent} from "./views/services/services.component";
 
 const routes: Routes = [
-  { path: '', component: MainLayoutComponent, canActivate: [AuthGuard], children: [
+  { path: '', component: MainLayoutComponent, /* canActivate: [AuthGuard] , */ children: [
       { path: '', component: MainComponent },
-      { path: 'content', component: ContentComponent }
+      { path: 'content', component: ContentComponent, children: [
+          { path: 'projects', component: ProjectsComponent },
+          { path: 'faq', component: FaqComponent },
+          { path: 'services', component: ServicesComponent }
+        ] }
     ] },
   { path: 'auth', component: AuthLayoutComponent, children: [
       { path: 'signin', component: LoginComponent }

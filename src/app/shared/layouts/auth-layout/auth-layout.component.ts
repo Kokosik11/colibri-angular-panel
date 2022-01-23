@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {animate, style, transition, trigger} from "@angular/animations";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-auth-layout',
@@ -17,5 +18,17 @@ import {animate, style, transition, trigger} from "@angular/animations";
     ])
   ]
 })
-export class AuthLayoutComponent {
+export class AuthLayoutComponent implements OnInit {
+  constructor(private router: Router,
+              private route: ActivatedRoute) {
+  }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      console.log(params)
+      this.router.navigate(['auth', 'signin'], {
+        queryParams: { ...params }
+      });
+    })
+  }
 }

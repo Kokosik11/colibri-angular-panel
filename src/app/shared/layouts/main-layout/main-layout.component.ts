@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
+  declare isMenuOpened: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.isMenuOpened = true;
   }
 
+  onBurgerBtnClick() {
+    this.isMenuOpened = !this.isMenuOpened;
+  }
 }

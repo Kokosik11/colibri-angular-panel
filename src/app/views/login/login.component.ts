@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
 
-import { AuthService } from '../shared/services/auth.service';
+import { AuthService } from '../../shared/services/auth.service';
 import {HttpErrorResponse} from "@angular/common/http";
 import {animate, style, transition, trigger} from "@angular/animations";
 
