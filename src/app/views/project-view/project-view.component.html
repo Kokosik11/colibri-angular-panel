@@ -1,0 +1,29 @@
+<!--<h1 *ngIf="project">{{ project.title }}</h1>-->
+<h1>Редактирование проекта</h1>
+
+<div *ngIf="project" class="project-container">
+  <div class="project-forms">
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+      <label for="title">Title</label>
+      <input type="text" id="title" formControlName="title">
+
+      <label for="link">Link</label>
+      <input type="text" id="link" formControlName="link">
+
+      <input type="file" style="display: none;" #input (change)="onFileUpload($event)">
+
+      <div class="flex-column">
+        <button (click)="triggerInput()" type="button" class="project-file">Загрузить изображение</button>
+        <div class="flex-row">
+          <button [disabled]="disabledSave || !projectForm.valid" type="submit" class="save-btn">Сохранить</button>
+          <button type="button" (click)="removeProject()" class="trash"><img src="../../../assets/imgs/trash.svg" alt="Trash icon"></button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="project-preview">
+    <img [src]="imagePreview" alt="Project preview image">
+  </div>
+</div>

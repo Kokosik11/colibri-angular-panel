@@ -1,0 +1,29 @@
+<!--<h1 *ngIf="project">{{ project.title }}</h1>-->
+<!--<h1 *ngIf="project">{{ project.title }}</h1>-->
+<h1>Добавить проект</h1>
+
+<div class="project-container">
+  <div class="project-forms">
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+      <label for="title">Title</label>
+      <input type="text" id="title" formControlName="title" placeholder="Colibri DC">
+
+      <label for="link">Link</label>
+      <input type="text" id="link" formControlName="link" placeholder="https://colibridc.tech">
+
+      <input type="file" formControlName="image" style="display: none;" #input (change)="onFileUpload($event)">
+
+      <div class="flex-column">
+        <button (click)="triggerInput()" type="button" class="project-file">Загрузить изображение</button>
+        <div class="flex-row">
+          <button [disabled]="disabledCreate || !projectForm.valid" type="submit" class="save-btn">Добавить</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="project-preview">
+    <img [src]="imagePreview" src="../../../assets/imgs/choose-img.svg" alt="Project preview image">
+  </div>
+</div>
