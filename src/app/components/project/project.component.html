@@ -1,20 +1,18 @@
-<div class="project">
   <div class="project-image">
-    <img src="../../../assets/imgs/project.png" alt="Project image">
+    <img [src]="project.imageURL" alt="Project image">
   </div>
 
   <div class="project-content">
-    <h3 class="project-title">{{ title }}</h3>
+    <h3 class="project-title">{{ project.title }}</h3>
 
     <div class="project-tools">
-      <div class="project-edit">
+      <a [routerLink]="'/content/project/' + project._id" class="project-edit">
         <img src="../../../assets/imgs/edit-icon.svg" alt="Edit icon">
-      </div>
+      </a>
 
-      <div class="project__ispublished">
-        <input type="checkbox" name="public" id="public">
+      <div class="project__is-published">
+        <input disabled type="checkbox" [checked]="project.isPublished" name="public" id="public">
         <label for="public">опубликовать</label>
       </div>
     </div>
   </div>
-</div>

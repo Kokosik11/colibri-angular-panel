@@ -1,1 +1,12 @@
-<app-project></app-project>
+<div class="heading">
+  <h1>Проекты</h1>
+
+  <a routerLink="/content/project/create" class="project-add">
+    <span class="mass">+</span>
+    <span>Добавить проект</span>
+  </a>
+</div>
+
+<div class="project-container">
+  <app-project class="project" *ngFor="let project of projects" [project]="project"></app-project>
+</div>

@@ -1,0 +1,51 @@
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  transition: .25s;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 400px;
+  width: 100%;
+
+  margin-bottom: 50px;
+  margin-right: 50px;
+}
+
+.heading {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.heading h1 {
+  color: #fff;
+}
+
+.project-add {
+  text-decoration: none;
+  display: flex;
+  width: 248px;
+  height: 40px;
+  background-color: #61409B;
+  border-radius: 40px;
+
+  align-items: center;
+  margin-left: 38px;
+  color: #321F57;
+  font-weight: 600;
+  padding: 12px;
+  transition: .25s;
+}
+
+.mass {
+  font-size: 42px;
+  margin-right: 12px;
+}
+
+.project-add:hover {
+  background-color: #724db4;
+}

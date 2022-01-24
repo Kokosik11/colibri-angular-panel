@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {IProject} from "../../shared/interfaces";
 
 @Component({
   selector: 'app-project',
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
-  title: string = "Colibri DC Project";
-
-  constructor() { }
+  @Input()
+  project!: IProject;
+  // title: string = "Colibri DC Project";
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

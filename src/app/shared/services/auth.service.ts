@@ -16,7 +16,6 @@ export class AuthService {
     }
 
     signin(user: User): Observable<{token: string}> {
-        console.log(user);
         return this.http.post<{token: string}>('/api/user/login', user)
           .pipe(
             tap(({ token }) => {
